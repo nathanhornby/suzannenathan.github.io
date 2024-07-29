@@ -1,1 +1,91 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzanne & Nathan</title>
+    <meta name="description" content="Suzanne and Nathan's big day.">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Calistoga&display=swap" rel="stylesheet">
+    <style>
+      /* Forgive me for I am not externally loaded or minified */
+        html,body{
+            margin:0;
+            padding: 0;
+            width:100%;
+            height:100%;
+            overflow: hidden;
+            background: #F9F7EA;
+            text-align: center;
+	        color: #523E27;
+            font-family: 'Caladea', serif;
+        }
+        h1{
+	        font-family: 'Calistoga', sans-serif;
+            font-size: 100px;
+            line-height: 1;
+            color: #304911;
+        }
+        h1 span{
+            display: block;
+            font-size:62px;
+        }
+        p, h2{
+            line-height: 1.5;
+            margin:0;
+            padding:0;
+	    }
+        header{
+            padding: 100px 0;
+            background: #F9F7EA url('img/header.jpg') top center no-repeat;
+            background-size: 100% auto;
+        }
+        header p{
+            margin:0 auto;
+            font-family: 'Ballet', sans-serif;
+            font-size: 42px;
+            width: 520px;
+        }
+        #header-date{
+            margin:90px auto 100px;
+            font-size: 70px;
+        }
+        @media screen
+        and (max-width: 900px) {
+            h1{
+                font-size: 72px;
+            }
+            h1 span{
+                font-size: 40px;
+            }
+            header{
+                background-size: auto 100%;
+            }
+            header p{
+                padding: 0 10%;
+                font-size: 28px;
+                width: 80%;
+            }
+             #header-date{
+                font-size: 42px;
+                margin-top: 60px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <p>We request the pleasure of your company to celebrate the marriage of…</p>
+        <h1>
+            Suzanne
+            <span>&amp;</span>
+            Nathan
+        </h1>
+        <p id="header-date">16th November 2024</p>
+	</div>	
+    </header>
+  </body>
+</html>
