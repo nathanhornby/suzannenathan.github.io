@@ -18,11 +18,14 @@
             height:100%;
             background: #F9F7EA;
             text-align: center;
+            font-size: 24px;
 	        color: #523E27;
             font-family: 'Caladea', serif;
+            font-style: italic;
         }
         h1{
 	        font-family: 'Calistoga', sans-serif;
+            font-style: normal;
             font-size: 100px;
             line-height: 1;
             color: #304911;
@@ -36,20 +39,72 @@
             margin:0;
             padding:0;
 	    }
+        h2{
+            margin: 40px 0 20px;
+        }
         header{
             padding: 100px 0;
             background: #F9F7EA url('img/header.jpg') top center no-repeat;
             background-size: 100% auto;
         }
         header p{
+            width: 520px;
+        }
+        p.script{
             margin:0 auto;
             font-family: 'Ballet', sans-serif;
             font-size: 42px;
-            width: 520px;
         }
         #header-date{
             margin:90px auto 100px;
             font-size: 70px;
+        }
+        #about{
+            padding: 120px 0 80px;
+            background: #F3EADD url('img/about.jpg') top center no-repeat;
+            background-size: 100% auto;
+        }
+        #about span{
+            display: block;
+            margin-top: 36px;
+            font-size: 16px;
+        }
+        #about img{
+            margin-left: -80px;
+        }
+        .container{
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+            width: 1024px;
+            text-align: left;
+        }
+        .container .left, .container .right{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            width: 480px;
+            vertical-align:top;
+        }
+        #gifts{
+            padding:160px 0 180px;
+            background: #F9F7EA url('img/gifts.jpg') top center no-repeat;
+            background-size: 100% auto;
+        }
+        #gifts .container{
+            margin: 0 auto;
+        }
+        #gifts .h2, #gifts p{
+            width: 574px;
+        }
+        footer{
+            padding: 200px 0 240px;
+            background: #F3EADD url('img/footer.jpg') top center no-repeat;
+            background-size: 100% auto;
+        }
+        footer .container p{
+            text-align: center;
+            margin-top: 70px;
         }
         @media screen
         and (max-width: 900px) {
@@ -76,15 +131,45 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <p>We request the pleasure of your company to celebrate the marriage of…</p>
+      <div>
+        <p class="script">We request the pleasure of your company to celebrate the marriage of…</p>
         <h1>
             Suzanne
             <span>&amp;</span>
             Nathan
         </h1>
-        <p id="header-date">16th November 2024</p>
+        <p id="header-date" class="script">16th November 2024</p>
 	</div>	
     </header>
+    <main>
+        <section id="about">
+            <div class="container">
+                <div class="left">
+                    <img src="img/about-images.png" alt="Hampshire Registration Offices, The Lucky Lychee and a map of the locations." width="485px"/>
+                </div>
+                <div class="right">
+                    <h2>The ceremony</h2>
+                    <p>Will be held at the beautiful Hampshire Registry Offices in Winchester. We will marry at 11:00, in the Basing room, with photographs taken before, during and after.</p>
+                    <h2>The reception</h2>
+                    <p>Will be held in the Lucky Lychee at The Green Man, in Winchester. We will dine on delicious Malaysian food at 14:00, with photographs taken before and during the toasts, which will be prior the meal. Live music will be provided by the talented Rose McSurname. We also invite you to join us for drinks following the meal.</p>
+                    <p>
+                        <span>The two venues are a 10 minute walk from each other, and both are within walking distance of the train station and various parking options within the city.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="gifts">
+            <div class="container">
+                <h2>Gifts</h2>
+            <p>We would be hugely grateful for any and all gifts, but our request is for money to help towards the cost of our ceremony and honeymoon.</p>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <p>We look forward to celebrating with you soon.</p>
+                <p class="script">Suzanne &amp; Nathan</p>
+            </div>
+        </footer>
+    </main>
   </body>
 </html>
