@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Calistoga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Calistoga&family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
       /* Forgive me for I am not externally loaded or minified */
         html,body{
@@ -16,21 +16,22 @@
             padding: 0;
             width:100%;
             height:100%;
-            background: #F3EADD;
+            background-color: #F3EADD;
             text-align: center;
             font-size: 24px;
-	        color: #523E27;
+	        color: #523922;
             font-family: 'Caladea', serif;
-            font-style: italic;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         h1{
-            margin: 20px 0;
+            margin: 60px 0 20px;
 	        font-family: 'Calistoga', sans-serif;
             font-style: normal;
             font-size: 100px;
             line-height: 1;
             letter-spacing: 2px;
-            color: #304911;
+            color: #4E5743;
         }
         h1 span{
             display: block;
@@ -41,33 +42,58 @@
             margin:0;
             padding:0;
 	    }
+        .button{
+            display: inline-block;
+            position: relative;
+            border-radius: 999px;
+            padding: 15px 30px;
+            color: #523922;
+            background-color: #F2BAA1;
+            text-decoration: none;
+            font-style: italic;
+            font-size: 20px;
+            border: 4px solid #F6D9CB;
+            transition: all 200ms ease-in-out;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        .button:hover{
+            border-color: #F2BAA1;
+        }
+        #rsvp-button{
+            display: inline-block;
+            margin-top: 40px;
+            background: url('img/button-bg.png') no-repeat;
+            background-size: 100%;
+            width: 313px;
+            height: 180px;
+        }
         h2{
             margin: 40px 0 20px;
             font-weight: 400;
         }
         header{
-            padding: 80px 0 0;
-            background-color: #F3EADD;
+            position: relative;
+            z-index: 2;
+            padding: 100px 0;
+            background-color: #FDF9ED;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
-        header div{
+        header #card{
             position: relative;
             z-index: 1;
-            width: 1200px;
+            width: 1100px;
             margin: 0 auto;
-            padding: 80px 0 500px;
-            background:  #F9F7EA url('img/header-bg.png') top center no-repeat;
-            background-size: 80%;
-            background-blend-mode: multiply;
-            border-radius: 4px 0 0 4px;
+            padding: 80px 0 100px;
+            background:  #FDF9ED url('img/header-card-bg.png') top center no-repeat;
+            border-radius: 4px;
             -webkit-box-shadow: 0px -1px 24px 0px rgba(0,0,0,0.03);
             -moz-box-shadow: 0px -1px 24px 0px rgba(0,0,0,0.03);
             box-shadow: 0px -1px 24px 0px rgba(0,0,0,0.03);
-        }
-        header img{
-            position: fixed;
-            z-index: 2;
-            top: 100px;
-            mix-blend-mode: multiply;
         }
         header img.left{
             left: -140px;
@@ -82,31 +108,47 @@
         }
         p.script{
             margin:0 auto;
-            font-family: 'Ballet', sans-serif;
-            font-size: 42px;
+            font-family: 'Pinyon Script', sans-serif;
+            font-size: 36px;
+            line-height: 1.2;
+        }
+        p.script sup{
+            margin-left: 12px;
         }
         #header-date{
-            margin:60px auto 100px;
-            font-size: 70px;
+            margin:60px auto -8px;
+            font-size: 50px;
         }
-        #about-divider{
-            position: relative;
-            margin-top: -200px;
-            z-index: 3;
-            display: block;
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(0deg, rgba(243,234,221,1) 0%, rgba(243,234,221,0) 100%);
+        #header-date span{
+            letter-spacing: -5px;
+        }
+        #header-year{
+            font-size: 32px;
+            letter-spacing: -2px;
+        }
+        #rsvp{
+            width: 60%;
+            padding: 1px 60px 50px 60px;
+            margin: 80px auto 0;
+            background-color: #F3EADD;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        #rsvp p{
+            width: auto;
+            margin: 30px auto;
+            font-size: 16px;
         }
         #about{
             position: relative;
             z-index: 2;
-            padding: 60px 0 80px;
+            padding: 140px 0 80px;
             background-color: #F3EADD;
             background-image: url('img/about.png');
             background-position: top right;
             background-repeat: no-repeat;
             background-size: auto 100%;
+            font-style: italic;
         }
         #about span{
             display: block;
@@ -114,45 +156,67 @@
             font-size: 16px;
         }
         #about img{
-            margin-left: -80px;
+            margin-left: -100px;
         }
         .container{
             display: block;
             margin: 0 auto;
             padding: 0;
-            width: 1024px;
+            width: 1100px;
             text-align: left;
         }
         .container .left, .container .right{
             display: inline-block;
             margin: 0;
             padding: 0;
-            width: 480px;
+            width: 545px;
             vertical-align:top;
         }
         #gifts{
             position: relative;
             z-index: 2;
-            padding:150px 0 180px;
-            background: #F9F7EA url('img/gifts.jpg') top right no-repeat;
+            padding:100px 0;
+            background: #FDF9ED url('img/gifts-bg.png') top left no-repeat;
             background-size: auto 100%;
+            font-style: italic;
         }
         #gifts .container{
             margin: 0 auto;
         }
-        #gifts .h2, #gifts p{
-            width: 574px;
+        #gifts .left{
+            padding-top: 60px;
+            width: 600px;
+        }
+        #gifts .right{
+            text-align: right;
+            width: 487px;
         }
         footer{
             position: relative;
-            z-index: 2;
-            padding: 200px 0 250px;
-            background: #F3EADD url('img/footer.jpg') center no-repeat;
-            background-size: 100% auto;
+            z-index: 1;
+            padding: 180px 0 200px;
+            background: #F3EADD url('img/footer-bg.png') center no-repeat;
+            background-size: 600px auto;
+            font-style: italic;
         }
-        footer .container p{
+        footer .container{
             text-align: center;
             margin-top: 70px;
+        }
+        #footer-left{
+            position: fixed;
+            z-index: 1;
+            bottom: 120px;
+            left: 0;
+        }
+        #footer-right{
+            position: fixed;
+            z-index: 1;
+            bottom: 120px;
+            right: 0;
+        }
+        footer .container img{
+            margin-top: 30px;
         }
         @media screen
         and (max-width: 900px) {
@@ -179,30 +243,37 @@
   </head>
   <body>
     <header>
-        <div>
+        <div id="card">
             <p class="script">We request the pleasure of your company to celebrate the marriage of…</p>
             <h1>
                 Suzanne
                 <span>&amp;</span>
                 Nathan
             </h1>
-            <p id="header-date" class="script">16th November 2024</p>
+            <p id="header-date" class="script"><span>16</span><sup>th</sup> November</p>
+            <p id="header-year" class="script">2024</p>
+            <div id="rsvp-button">
+                <a href="http://eepurl.com/iWFPeU" target="_blank" rel="nofollow" class="button">Send us your RSVP</a>
+            </div>
+            <!-- <div id="rsvp">
+                <h2>RSVP for our celebration</h2>
+                <p>The reception will be held at the <strong>The Green Man</strong>, Winchester, from <strong>12:00pm</strong>.</p>
+                <p>If you have been invited, then this will also RSVP you for the ceremony, which will be held in the <strong>Basing Room of Castle Hill</strong>, Winchester, at <strong>11:00am</strong>.</p>
+                <a href="http://eepurl.com/iWFPeU" target="_blank" rel="nofollow" class="button">Send your RSVP</a>
+            </div> -->
         </div>
-        <img src="img/brown-rose.jpg" width="650px" class="left"/>
-        <img src="img/orange-rose.jpg" width="560px" class="right"/>
     </header>
     <main>
-        <div id="about-divider"></div></div>
         <section id="about">
             <div class="container">
                 <div class="left">
-                    <img src="img/about-images.png" alt="Hampshire Registration Offices, The Lucky Lychee and a map of the locations." width="485px"/>
+                    <img src="img/about-images.png" alt="Hampshire Registration Offices, The Lucky Lychee and a map of the locations." width="554px"/>
                 </div>
                 <div class="right">
                     <h2>The ceremony</h2>
-                    <p>Will be held at the beautiful Hampshire Registry Offices in Winchester. We will marry at 11:00, in the Basing room, with photographs taken before, during and after.</p>
+                    <p>Will be held in the Basing Room of Castle Hill, in Winchester. We will marry at 11:00, with photographs taken before, during and after.</p>
                     <h2>The reception</h2>
-                    <p>Will be held in the Lucky Lychee at The Green Man, in Winchester. We will dine on delicious Malaysian food at 14:00, with photographs taken before and during the toasts, which will be prior the meal. Live music will be provided by the talented Rose McSurname. We also invite you to join us for drinks following the meal.</p>
+                    <p>Will be held in the Lucky Lychee at The Green Man, in Winchester. Join us from 12:00 , with delicious Malaysian food served from 14:00. Photographs will be taken before and during the toasts, which will be prior the meal. We also invite you to join us for drinks following the meal.</p>
                     <p>
                         <span>The two venues are a 10 minute walk from each other, and both are within walking distance of the train station and various parking options within the city.</span>
                     </p>
@@ -211,15 +282,22 @@
         </section>
         <section id="gifts">
             <div class="container">
-                <h2>Gifts</h2>
-            <p>We would be hugely grateful for any and all gifts, but our request is for money to help towards the cost of the wedding and honeymoon.</p>
+                <div class="left">
+                    <h2>Gifts</h2>
+                    <p>We would be hugely grateful for any and all gifts, but our request is for money to help towards the cost of the wedding and honeymoon.</p>
+                </div>
+                <div class="right">
+                    <img src="img/money.jpg" alt="A wallet overflowing with credit cards." width="457px" />
+                </div>
             </div>
         </section>
         <footer>
             <div class="container">
                 <p>We look forward to celebrating with you soon.</p>
-                <p class="script">Suzanne &amp; Nathan</p>
+                <img src="img/crest.png" alt="S & N crest" width="120px" />
             </div>
+            <img src="img/footer-left.jpg" id="footer-left" width="277px" />
+            <img src="img/footer-right.jpg" id="footer-right" width="270px" />
         </footer>
     </main>
   </body>
